@@ -6,11 +6,11 @@ pipeline {
         }
     }
 	stages {
-		stage('Checkout SCM') {
-			steps {
-				git '/home/JenkinsDependencyCheckTest'
-			}
-		}
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
 
 		stage('OWASP DependencyCheck') {
 			steps {
